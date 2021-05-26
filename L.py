@@ -8,7 +8,7 @@ def run_experiment(experiment):
 
 if __name__ == '__main__':
     root = tk.Tk()
-    root.title('ITEconsult Launcher')
+    root.title('ITEconsult')
     root.iconbitmap(default = 'Resources\iteIcon.ico')
     root.configure(bg = 'grey')
     s = ttk.Style()
@@ -23,10 +23,10 @@ if __name__ == '__main__':
     s = ttk.Style()
     s.configure('TFrame', background = 'white smoke')
     s.configure('TLabelframe', background = 'white smoke')
-    s.configure('TLabelframe.Label', background = 'white smoke', foreground = 'gray40', font=('Poppins',7,'bold'))
+    s.configure('TLabelframe.Label', background = 'white smoke', foreground = 'gray15', font=('Poppins',7))
     s.configure('TLabel', background = 'white smoke')
     s.configure('TLoadingWindow.TFrame', background = 'white smoke')
-    s.configure('TButton', background = 'snow', foreground = 'gray33', font=('Poppins', 9, 'bold'))
+    s.configure('TButton', background = 'ivory3', foreground = 'gray30', font=('Poppins', 9, 'bold'), bd=25)
 
     left_frm = ttk.Frame(root)
     left_frm.pack(side = tk.LEFT, fill = tk.Y)
@@ -41,14 +41,14 @@ if __name__ == '__main__':
     read_data_lf.columnconfigure(0, weight = 1, uniform = 'read_data')
     read_data_leftframe.grid(pady = 10, row = 0, column = 0, sticky = 'ew')
 
-    update_db_from_SAGE_btn = ttk.Button(read_data_leftframe, width = 20, text = 'READ DATA', command = lambda: update_db_from_SAGE_command(), state = 'disabled')
+    update_db_from_SAGE_btn = ttk.Button(read_data_leftframe, width = 20, text = 'READ DATA')
     update_db_from_SAGE_btn.pack(ipadx = 10, ipady = 2, padx = 20)
 
     read_data_rightframe = ttk.Frame(read_data_lf)
     read_data_lf.columnconfigure(1, weight = 1, uniform = 'read_data')
     read_data_rightframe.grid(pady = 10, row = 0, column = 1, sticky = 'ew')
 
-    add_manual_input_btn = ttk.Button(read_data_rightframe, width = 20, text = 'MANUAL DATA', command = lambda: add_manual_input(), state = 'disabled')
+    add_manual_input_btn = ttk.Button(read_data_rightframe, width = 20, text = 'MANUAL DATA')
     add_manual_input_btn.pack(ipadx = 10, ipady = 2, padx = 20)
 
     run_model_lf = ttk.LabelFrame(buttons_frame, text = 'SELECT EXPERIMENT')
@@ -91,12 +91,12 @@ if __name__ == '__main__':
     sac_buttons_rightframe.grid(row = 0, column = 1, sticky = 'we')
 
     #varname: (title, link)
-    buttons_dic = {'DEMAND REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=223A9B02F4538FFC82411EFAF07F6A1D',
-                  'MASTER DATA ERRORS': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=315A9B02F45146C8478A9C88FAA53442',
-                  'RUN SUMMARY': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=4B636301B40D93B66DBA27FC1BF0C2C9',
-                  'SCHEDULE REVIEW': 'http://www.google.com/',
-                  'REPORT CATALOG': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=home;tab=catalog',
-                  'SCHEDULE DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=E86A9B02F45046DC9A422670A0016DA9',
+    buttons_dic = {'WEEKLY DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=60550B04C9065F71913B190BFE6EB17C;forceOpenView=true',
+                  'COMPARE RUNS': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=8FF50B04C900218FCE043707F07405B7;forceOpenView=true',
+                  'DEMAND REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=8FF50B04C900218FCE043707F07405B7;forceOpenView=true',
+                  'HISTORICAL REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=759BC306F395D7C284A88AC321DCE0A8',
+                  'FORECAST DEMAND': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=2D8B83045497F99AE31C9E42C1A5B716',
+                  'EXTRA BUTTON': 'www.google.com.ar',
                   }
 
     side = lambda i: sac_buttons_leftframe if i%2 == 0 else sac_buttons_rightframe
