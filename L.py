@@ -1,11 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter.messagebox import askyesno
 from PIL import (Image, ImageTk)
 from webbrowser import open as webopen
+import threading
+import subprocess
 
 def run_experiment(experiment):
-    subprocess.run(f'Model\CJFoods_windows-{experiment}.bat')
+    subprocess.run(f'Model\SCONetwork_windows-{experiment}.bat')
 
 if __name__ == '__main__':
     root = tk.Tk()
@@ -35,14 +36,8 @@ if __name__ == '__main__':
     buttons_frame = ttk.Frame(left_frm)
     buttons_frame.pack(side = tk.BOTTOM, padx = 10, pady = 10, fill = tk.Y, expand = True)
 
-#   prueba 
-    # input_text = 'prueba'
-    # entry1 = ttk.Entry(root, textvariable = input_text)
-    # entry1.pack(fill = tk.X, padx = 10, pady = 10)
     title = tk.Label(buttons_frame, text = 'SUPPLY CHAIN NETWORK OPTIMIZATION', bg = 'white smoke', fg = 'steel blue', font = ('Poppins', 12, 'bold'))
     title.pack(side = tk.TOP, padx = 5, pady = (10,15), fill = tk.X)
-    # title.insert("end", text)
-#dd
     read_data_lf = ttk.LabelFrame(buttons_frame, text = 'UPDATE DATA')
     read_data_lf.pack(fill = tk.X, padx = 10, pady = 10)
 
