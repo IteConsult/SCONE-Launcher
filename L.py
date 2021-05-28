@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter.messagebox import askyesno
 from PIL import (Image, ImageTk)
 from webbrowser import open as webopen
 
@@ -34,6 +35,14 @@ if __name__ == '__main__':
     buttons_frame = ttk.Frame(left_frm)
     buttons_frame.pack(side = tk.BOTTOM, padx = 10, pady = 10, fill = tk.Y, expand = True)
 
+#   prueba 
+    # input_text = 'prueba'
+    # entry1 = ttk.Entry(root, textvariable = input_text)
+    # entry1.pack(fill = tk.X, padx = 10, pady = 10)
+    title = tk.Label(buttons_frame, text = 'SUPPLY CHAIN NETWORK OPTIMIZATION', bg = 'white smoke', fg = 'steel blue', font = ('Poppins', 12, 'bold'))
+    title.pack(side = tk.TOP, padx = 5)
+    title.insert("end", text)
+#dd
     read_data_lf = ttk.LabelFrame(buttons_frame, text = 'UPDATE DATA')
     read_data_lf.pack(fill = tk.X, padx = 10, pady = 10)
 
@@ -96,7 +105,7 @@ if __name__ == '__main__':
                   'DEMAND REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=FE0CCB026F647AA195B99C7A35307B9B',
                   'HISTORICAL REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=759BC306F395D7C284A88AC321DCE0A8',
                   'FORECAST DEMAND': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=2D8B83045497F99AE31C9E42C1A5B716',
-                  'EXTRA BUTTON': 'www.google.com.ar',
+                  'EDIT DEMAND': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=203D7B057DBE69F43A2E07E5112A09F6;mode=view',
                   }
 
     side = lambda i: sac_buttons_leftframe if i%2 == 0 else sac_buttons_rightframe
