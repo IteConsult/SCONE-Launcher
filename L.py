@@ -37,7 +37,7 @@ if __name__ == '__main__':
     buttons_frame.pack(side = tk.BOTTOM, padx = 10, pady = 10, fill = tk.Y, expand = True)
 
     title = tk.Label(buttons_frame, text = 'SUPPLY CHAIN NETWORK OPTIMIZATION', bg = 'white smoke', fg = 'steel blue', font = ('Poppins', 12, 'bold'))
-    title.pack(side = tk.TOP, padx = 5, pady = (10,15), fill = tk.X)
+    title.pack(side = tk.TOP, padx = 5, pady = (0,20), fill = tk.X)
     read_data_lf = ttk.LabelFrame(buttons_frame, text = 'UPDATE DATA')
     read_data_lf.pack(fill = tk.X, padx = 10, pady = 10)
 
