@@ -40,8 +40,8 @@ if __name__ == '__main__':
     # entry1 = ttk.Entry(root, textvariable = input_text)
     # entry1.pack(fill = tk.X, padx = 10, pady = 10)
     title = tk.Label(buttons_frame, text = 'SUPPLY CHAIN NETWORK OPTIMIZATION', bg = 'white smoke', fg = 'steel blue', font = ('Poppins', 12, 'bold'))
-    title.pack(side = tk.TOP, padx = 5)
-    title.insert("end", text)
+    title.pack(side = tk.TOP, padx = 5, pady = (10,15), fill = tk.X)
+    # title.insert("end", text)
 #dd
     read_data_lf = ttk.LabelFrame(buttons_frame, text = 'UPDATE DATA')
     read_data_lf.pack(fill = tk.X, padx = 10, pady = 10)
