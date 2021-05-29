@@ -3,6 +3,7 @@ sys.path.append('C:/Users/admin/Documents/GitHub/LauncherClass')
 from Launcher import Launcher
 
 app = Launcher('SUPPLY CHAIN NETWORK OPTIMIZATION')
+app.root.resizable(0,0)
 
 app.add_data_lf()
 app.add_model_lf('SCONetwork')
