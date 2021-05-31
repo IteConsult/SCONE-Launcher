@@ -1,5 +1,6 @@
 import sys
-sys.path.append('C:/Users/admin/Documents/GitHub/LauncherClass')
+import os
+sys.path.append(os.path.dirname(os.getcwd())+'\\LauncherClass')
 from Launcher import Launcher
 
 app = Launcher('SUPPLY CHAIN NETWORK OPTIMIZATION')
