@@ -15,11 +15,11 @@ def UploadToHANA():
     #HANA_ADDRESS = "hana://" + HANA_USER + ":" + HANA_PW + "@" + "8969f818-750f-468f-afff-3dc99a6e805b.hana.trial-us10.hanacloud.ondemand.com" + ":443" + "/?encrypt=true&validateCertificate=true"
 
     dfList = []
-    plan = pd.read_excel("output_table.xlsx", sheet_name="ite_snp_out_plan", dtype=str)
+    plan = pd.read_excel("Model/output_table.xlsx", sheet_name="ite_snp_out_plan", dtype=str)
     print(plan)
-    week = pd.read_excel("output_table.xlsx", sheet_name="ite_snp_out_week", dtype=str)
+    week = pd.read_excel("Model/output_table.xlsx", sheet_name="ite_snp_out_week", dtype=str)
     print(week)
-    minrun = pd.read_excel("output_table.xlsx", sheet_name="ite_snp_sol_minrun", dtype=str)
+    minrun = pd.read_excel("Model/output_table.xlsx", sheet_name="ite_snp_sol_minrun", dtype=str)
     print(minrun)
     #solver = pd.read_excel("output_table.xlsx", header=0, names=col_names, sheet_name="ite_snp_solver_output")
 
