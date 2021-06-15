@@ -5,6 +5,12 @@ name = "pypi"
 
 [packages]
 pillow = "*"
+pandas = "*"
+hdbcli = "*"
+sqlalchemy = "*"
+xlrd = "*"
+openpyxl = "*"
+sqlalchemy-hana = "*"
 
 [dev-packages]
 
