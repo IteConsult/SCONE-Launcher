@@ -47,12 +47,12 @@ def UploadToHANA():
 
     engine.dispose()
 
-buttons_dic = {'WEEKLY DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=60550B04C9065F71913B190BFE6EB17C;forceOpenView=true',
-              'COMPARE RUNS': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=8FF50B04C900218FCE043707F07405B7;forceOpenView=true',
-              'DEMAND REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=FE0CCB026F647AA195B99C7A35307B9B',
-              'HISTORICAL REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=759BC306F395D7C284A88AC321DCE0A8',
-              'FORECAST DEMAND': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=2D8B83045497F99AE31C9E42C1A5B716',
-              'EDIT DEMAND': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=203D7B057DBE69F43A2E07E5112A09F6;mode=view',
+buttons_dic = {'DEMAND PLANNING': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=203D7B057DBE69F43A2E07E5112A09F6;forceOpenView=true',
+              'WEEKLY DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=60550B04C9065F71913B190BFE6EB17C;forceOpenView=true',
+              'SUPPLY PLANNING': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=2EA61302C2DB28A1759DEE2730C41670;forceOpenView=true',
+              'PLAN DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=64F653029A205806156903885E5D69C2;forceOpenView=true',
+              'DP/SP KPI REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=E38E53029A24D6F9B21661CC4C1D32BA;forceOpenView=true',
+              'KPI REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=553E53029A2044F7957A381152697F9C;forceOpenView=true',
               }
 
 def UploadToHANACommand():
@@ -70,10 +70,25 @@ upload_frm = ttk.Frame(app.read_data_lf)
 app.read_data_lf.columnconfigure(2, weight = 1, uniform = 'read_data')
 upload_frm.grid(pady = 10, row = 0, column = 2, sticky = 'ew')
 
-app.upload_btn = ttk.Button(upload_frm, width = 13, text = 'UPLOAD TO HANA', command = lambda: UploadToHANACommand())
+app.upload_btn = ttk.Button(upload_frm, width = 13, text = 'UPLOAD TO CLOUD', command = lambda: UploadToHANACommand())
 app.upload_btn.pack(ipadx = 10, ipady = 2, padx = 20)
 
-app.add_model_lf('SCONetwork')
+app.add_model_lf()
+
+def run_simulation_cmd():
+    lw = LoadingWindow(app)
+    th = threading.Thread(target = subprocess.run, args = (f'Model\SCONetwork_windows-simulation.bat',))
+    th.start()
+    lw.check(th)
+    
+def run_optimization_cmd():
+    lw = LoadingWindow(app)
+    th = threading.Thread(target = subprocess.run, args = (f'Model\SCONetwork_windows-optimization.bat',))
+    th.start()
+    lw.check(th)
+
+app.run_simulation_btn['command'] = lambda: run_simulation_cmd()
+app.run_optimization_btn['command'] = lambda: run_optimization_cmd()
 
 app.add_sac_buttons(buttons_dic)
 
