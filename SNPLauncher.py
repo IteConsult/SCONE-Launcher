@@ -48,11 +48,11 @@ def UploadToHANA():
     engine.dispose()
 
 buttons_dic = {'DEMAND PLANNING': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=203D7B057DBE69F43A2E07E5112A09F6;forceOpenView=true',
-              'WEEKLY DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=60550B04C9065F71913B190BFE6EB17C;forceOpenView=true',
+              'SNP WEEK DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=60550B04C9065F71913B190BFE6EB17C;forceOpenView=true',
               'SUPPLY PLANNING': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=2EA61302C2DB28A1759DEE2730C41670;forceOpenView=true',
-              'PLAN DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=64F653029A205806156903885E5D69C2;forceOpenView=true',
+              'SNP PLAN DETAIL': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=64F653029A205806156903885E5D69C2;forceOpenView=true',
               'DP/SP KPI REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=E38E53029A24D6F9B21661CC4C1D32BA;forceOpenView=true',
-              'KPI REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=553E53029A2044F7957A381152697F9C;forceOpenView=true',
+              'SNP KPI REVIEW': 'https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=story;storyId=553E53029A2044F7957A381152697F9C;forceOpenView=true',
               }
 
 def UploadToHANACommand():
