@@ -64,7 +64,7 @@ def UploadToHANACommand():
 app = Launcher('SUPPLY CHAIN NETWORK OPTIMIZATION')
 app.root.resizable(0,0)
 
-app.add_data_lf()
+app.add_data_lf(read_data_command = lambda: webopen('https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=home'), manual_data_command = lambda: webopen('https://ite-consult.br10.hanacloudservices.cloud.sap/sap/fpa/ui/app.html#;view_id=model;model_id=C3LDDR6JYHCMKHQHV0M69AMKN4'))
 
 upload_frm = ttk.Frame(app.read_data_lf)
 app.read_data_lf.columnconfigure(2, weight = 1, uniform = 'read_data')
